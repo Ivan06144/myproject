@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>CUAGame | 討論區</title>
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>CUAGame</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="link">首頁</a></li>
+                    <li><a href="forum.html" class="link active">討論版</a></li>
+                    <li><a href="#" class="link">產品特色</a></li>
+                    <li><a href="#" class="link">關於我們</a></li>
+                </ul>
+            </div>
+            <div class="nav-button">
+                <button class="btn white-btn" id="loginBtn" onclick="login()">登入</button>
+                <button class="btn" id="registerBtn" onclick="register()">註冊</button>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
+
+        <header class="forum-header">
+            <h1>CUAGame 討論區</h1>
+            <p>歡迎來到 CUAGame 討論區，與其他玩家一起分享你的經驗和技巧！</p>
+        </header>
+
+        <main class="forum-main">
+            <section class="forum-topics">
+                <h2>最新主題</h2>
+                <ul class="topics-list">
+                    <li>
+                        <a href="topic.html">如何提升遊戲技巧？</a>
+                        <span>由 Kevin 發佈，最後回覆於 2024-08-10</span>
+                    </li>
+                    <li>
+                        <a href="topic.html">CUAGame 最新更新內容</a>
+                        <span>由 Jordan 發佈，最後回覆於 2024-08-09</span>
+                    </li>
+                    <!-- 更多主題 -->
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
