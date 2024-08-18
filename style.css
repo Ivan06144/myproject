@@ -326,7 +326,7 @@ header{
     width: 85%;
     max-width: 800px;
     padding: 30px 25px;
-    margin: 110px auto 80px auto; /* 增加距離 */
+    margin: 110px auto 80px auto; /* 增加margin-top以適當距離 */
     background: rgba(0, 0, 0, 0.75);
     border-radius: 10px;
     text-align: center;
@@ -467,7 +467,9 @@ header{
     .nav-menu-btn i:hover{
         background: rgba(255, 255, 255, 0.15);
     }
+    
 }
+
 @media only screen and (max-width: 540px) {
     .wrapper{
         min-height: 100vh;
@@ -485,3 +487,4 @@ header{
         gap: 0;
     }
 }
+

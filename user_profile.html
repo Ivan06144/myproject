@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
     <title>CUAGame | 個人介面</title>
 </head>
@@ -24,6 +25,9 @@
             </div>
             <div class="nav-button">
                 <button class="btn white-btn" id="logoutBtn">登出</button>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
             </div>
         </nav>
 
@@ -47,7 +51,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             const userPosts = document.getElementById('userPosts');
 
-            // Example posts
             const posts = [
                 { title: '我的第一篇文章', content: '這是內容...', id: 1 },
                 { title: '我的第二篇文章', content: '這是內容...', id: 2 },
@@ -67,17 +70,48 @@
                 userPosts.appendChild(postItem);
             });
         });
-    </script>
+
+        function myMenuFunction() {
+         var i = document.getElementById("navMenu");
+     
+         if(i.className === "nav-menu") {
+             i.className += " responsive";
+         } else {
+             i.className = "nav-menu";
+         }
+        }
+
+        // 添加事件監聽器到登出按鈕
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            // 確認使用者是否要登出
+            const confirmed = confirm('你確定要登出嗎?');
+            
+            if (confirmed) {
+                // 發送登出請求到伺服器（假設你的後端有一個登出 API）
+                fetch('/logout', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ action: 'logout' })
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // 登出成功，跳轉到登入頁面或首頁
+                        window.location.href = 'index.html';
+                    } else {
+                        // 登出失敗，顯示錯誤
+                        alert('登出失敗，請稍後再試。');
+                    }
+                })
+                .catch(error => {
+                    console.error('登出時發生錯誤:', error);
+                    alert('登出時發生錯誤，請稍後再試。');
+                });
+            }
+        });
+
+     </script>
 </body>
 </html>
-"""
 
-# Path for the new HTML file
-user_profile_html_path = '/mnt/data/myproject/myproject/user_profile.html'
-
-# Saving the new HTML content to the file
-with open(user_profile_html_path, 'w', encoding='utf-8') as file:
-    file.write(user_profile_html_content)
-
-# Confirming the creation of the user profile interface
-user_profile_html_path
