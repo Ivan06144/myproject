@@ -48,10 +48,48 @@
                         <a href="topic.html">CUAGame 最新更新內容</a>
                         <span>由 Jordan 發佈，最後回覆於 2024-08-09</span>
                     </li>
-                    <!-- 更多主題 -->
                 </ul>
+            </section>
+            <section class="forum-new-topic">
+                <h2>新增主題</h2>
+                <form id="newTopicForm">
+                    <input type="text" placeholder="主題標題" required class="input-field">
+                    <textarea placeholder="內容..." rows="5" required class="input-field"></textarea>
+                    <button type="submit" class="submit">新增主題</button>
+                </form>
             </section>
         </main>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() 
+        {
+            const postList = document.getElementById('postList');
+            const postForm = document.getElementById('postForm');
+
+            postForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const postTitle = document.getElementById('postTitle').value;
+                const postContent = document.getElementById('postContent').value;
+
+                const postItem = document.createElement('li');
+                postItem.classList.add('post-item');
+
+                postItem.innerHTML = `
+                    <a href="#">${postTitle}</a>
+                    <span>${postContent}</span>
+                    <button class="delete-btn">刪除</button>
+                `;
+
+                postList.appendChild(postItem);
+
+                postForm.reset();
+
+                postItem.querySelector('.delete-btn').addEventListener('click', function() {
+                    postList.removeChild(postItem);
+                });
+            });
+        });
+    </script>
 </body>
 </html>

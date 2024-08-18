@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CUAGame | 個人介面</title>
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>CUAGame</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="link">首頁</a></li>
+                    <li><a href="forum.html" class="link">討論版</a></li>
+                    <li><a href="#" class="link">產品特色</a></li>
+                    <li><a href="#" class="link">關於我們</a></li>
+                    <li><a href="#" class="link active">個人介面</a></li>
+                </ul>
+            </div>
+            <div class="nav-button">
+                <button class="btn white-btn" id="logoutBtn">登出</button>
+            </div>
+        </nav>
+
+        <div class="profile-container">
+            <h2>個人資料</h2>
+            <p><strong>名稱：</strong>使用者名稱</p>
+            <p><strong>電子郵件：</strong>user@example.com</p>
+            <button class="btn" id="editProfileBtn">編輯個人資料</button>
+
+            <h2>我的文章</h2>
+            <div id="userPosts">
+                <!-- User's posts will be listed here -->
+            </div>
+
+            <h2>帳號設定</h2>
+            <button class="btn" id="changePasswordBtn">變更密碼</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userPosts = document.getElementById('userPosts');
+
+            // Example posts
+            const posts = [
+                { title: '我的第一篇文章', content: '這是內容...', id: 1 },
+                { title: '我的第二篇文章', content: '這是內容...', id: 2 },
+            ];
+
+            posts.forEach(post => {
+                const postItem = document.createElement('div');
+                postItem.classList.add('post-item');
+
+                postItem.innerHTML = `
+                    <h4>${post.title}</h4>
+                    <p>${post.content}</p>
+                    <button class="btn edit-btn">編輯</button>
+                    <button class="btn delete-btn">刪除</button>
+                `;
+
+                userPosts.appendChild(postItem);
+            });
+        });
+    </script>
+</body>
+</html>
+"""
+
+# Path for the new HTML file
+user_profile_html_path = '/mnt/data/myproject/myproject/user_profile.html'
+
+# Saving the new HTML content to the file
+with open(user_profile_html_path, 'w', encoding='utf-8') as file:
+    file.write(user_profile_html_content)
+
+# Confirming the creation of the user profile interface
+user_profile_html_path
