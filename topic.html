@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遊戲技巧討論 - CUAGame</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts - Poppins -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- 導航欄 -->
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>CUAGame</p>
+            </div>
+
+            <div id="navMenu" class="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="link">首頁</a></li>
+                    <li><a href="forum.html" class="link active">討論版</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-button">
+                <button class="btn">登入</button>
+                <button class="btn registerBtn">註冊</button>
+            </div>
+
+            <div class="nav-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+
+        <!-- 主要內容 -->
+        <main class="forum-main">
+            <!-- 文章內容 -->
+            <div class="topic-content">
+                <div class="topic-header">
+                    <div class="author">
+                        <div class="author-info">
+                            <div class="author-name">Kevin</div>
+                            <div class="post-date">發布於 2024-08-10</div>
+                        </div>
+                    </div>
+
+                    <div class="topic-actions">
+                        <div class="action-buttons">
+                            <button class="action-btn like-btn">
+                                <i class="fas fa-heart"></i>
+                                <span id="likeCount">0</span>
+                            </button>
+                            <button class="action-btn edit-btn" id="editTopicBtn">
+                                <i class="fas fa-edit"></i>
+                                編輯
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="topic-body">
+                    <div id="topicContent">
+                        <h1 class="topic-title">如何提升遊戲技巧？</h1>
+                        <div class="topic-text">
+                            <p>大家好，我想分享一些提升遊戲技巧的心得：</p>
+                            <ol>
+                                <li>每天固定練習時間，保持手感</li>
+                                <li>觀看職業選手的比賽影片，學習他們的打法</li>
+                                <li>記錄自己的遊戲過程，分析優缺點</li>
+                                <li>和其他玩家交流經驗，互相學習</li>
+                            </ol>
+                        </div>
+                        <div class="topic-tags">
+                            <span class="tag">遊戲技巧</span>
+                            <span class="tag">心得分享</span>
+                            <span class="tag">新手教學</span>
+                        </div>
+                    </div>
+
+                    <div id="editForm" class="edit-form hidden">
+                        <form id="topicEditForm">
+                            <textarea id="editContent" class="edit-textarea"></textarea>
+                            <div class="edit-actions">
+                                <button type="submit" class="submit-btn">儲存修改</button>
+                                <button type="button" class="cancel-btn">取消</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 回覆區域 -->
+            <div class="responses">
+                <div class="responses-header">
+                    <h2 class="responses-title">回覆</h2>
+                    <span class="response-count">共 <span id="responseCount">2</span> 則</span>
+                </div>
+
+                <div id="responseList" class="response-list">
+                    <!-- 回覆項目 1 -->
+                    <div class="response-item">
+                        <div class="response-header">
+                            <div class="author">
+                                
+                                <div class="author-info">
+                                    <div class="author-name">Jordan</div>
+                                    <div class="post-date">2024-08-10</div>
+                                </div>
+                            </div>
+                            <div class="response-actions">
+                                <div class="action-buttons">
+                                    <button class="action-btn like-btn">
+                                        <i class="fas fa-heart"></i>
+                                        <span>0</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="response-content">
+                            感謝分享！我會試著應用這些技巧。
+                        </div>
+                    </div>
+
+                    <!-- 回覆項目 2 -->
+                    <div class="response-item">
+                        <div class="response-header">
+                            <div class="author">
+
+                                <div class="author-info">
+                                    <div class="author-name">Alice</div>
+                                    <div class="post-date">2024-08-10</div>
+                                </div>
+                            </div>
+                            <div class="response-actions">
+                                <div class="action-buttons">
+                                    <button class="action-btn like-btn">
+                                        <i class="fas fa-heart"></i>
+                                        <span>0</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="response-content">
+                            我也有一些經驗，想分享一下。除了上面提到的，我覺得找到適合自己的遊戲設定也很重要，包括滑鼠靈敏度、按鍵配置等。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 發表回覆區域 -->
+            <div class="new-response">
+                <h2 class="new-response-title">發表回覆</h2>
+                <form id="replyForm" class="response-form">
+                    <textarea 
+                        class="response-textarea"
+                        placeholder="分享你的想法..."
+                        required
+                    ></textarea>
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">發表回覆</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // 導航欄響應式選單
+        const menuBtn = document.querySelector(".nav-menu-btn");
+        const navigation = document.querySelector(".nav-menu");
+
+        menuBtn.addEventListener("click", () => {
+            navigation.classList.toggle("responsive");
+        });
+
+        // 編輯功能
+        const editBtn = document.getElementById('editTopicBtn');
+        const editForm = document.getElementById('editForm');
+        const topicContent = document.getElementById('topicContent');
+        const editContent = document.getElementById('editContent');
+        const topicEditForm = document.getElementById('topicEditForm');
+
+        editBtn.addEventListener('click', () => {
+            // 將當前內容填入編輯表單
+            editContent.value = topicContent.innerText;
+            // 顯示編輯表單
+            editForm.classList.remove('hidden');
+            // 隱藏原內容
+            topicContent.classList.add('hidden');
+        });
+
+        // 取消編輯
+        const cancelBtn = document.querySelector('.cancel-btn');
+        cancelBtn.addEventListener('click', () => {
+            editForm.classList.add('hidden');
+            topicContent.classList.remove('hidden');
+        });
+
+        // 點贊功能
+        const likeButtons = document.querySelectorAll('.like-btn');
+        likeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const countSpan = this.querySelector('span');
+                let count = parseInt(countSpan.textContent);
+                if (this.classList.contains('active')) {
+                    countSpan.textContent = count + 1;
+                } else {
+                    countSpan.textContent = count - 1;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
